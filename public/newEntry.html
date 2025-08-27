@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New AssetEntry</title>
+    <link rel="stylesheet" href="/public/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    
+        <header>
+            <nav class="navbar">
+                <button class="nav-toggle" onclick="toggleNav()">☰</button>
+                <ul class="navbar-links" id="navbar-links">
+                    <div class="nav-tab">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item"><a href="newEntry.html" class="nav-link ">New Entry</a></li>
+                        <li class="nav-item"> <a href="EditEntry.html" class="nav-link">Edit Entry</a></li>
+                    </div>
+                </ul>
+                <div class="container">
+                    <div class="search-container">
+                        <label for="searchInput">Enter Asset Id:</label>
+                        <input type="text" id="searchAssestCode" placeholder="Enter Asset Code..." />
+                        <button type="button" id="searchBtn" onclick="searchAsset()"><i class="fas fa-search"></i>
+                            Search</button>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+
+        <h2>Assets Details</h2>
+
+        <form id="assetform" class="styled-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="sl_no">SL NO*</label>
+                    <input type="text" name="slNo" id="slNo" placeholder="SL NO" required>
+                </div>
+                <div class="form-group">
+                    <label for="employee_id">Employee ID*</label>
+                    <input type="text" name="employee_id" id="employee_id" placeholder="Employee ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="current_user_name">Current User Name*</label>
+                    <input type="text" name="current_user_name" id="current_user_name" placeholder="Current User Name"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="site">Site*</label>
+                    <select name="site" id="site" required>
+                        <option value="">Select Site</option>
+                        <option value="ERL-Agarwal House">ERL-Agarwal House</option>
+                        <option value="ERL- City">ERL- City</option>
+                        <option value="ERL-AASTHA">ERL-AASTHA</option>
+                        <option value="ERL-AAMOD">ERL-AAMOD</option>
+                        <option value="ERL-HO">ERL-HO</option>
+                        <option value="ERL-AEROCITY">ERL-AEROCITY</option>
+                        <option value="ERL-BUSINESS BAY">ERL-BUSINESS BAY</option>
+                        <option value="ERL-Bhubaneswar">ERL-Bhubaneswar</option>
+                        <option value="ERL-NATURE">ERL-Nature</option>
+                        <option value="ERL-TEJOMAYA">ERL-Tejomaya</option>
+                        <option value="ERL-QUEENS PARK">ERL-Queens Park</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous_user">Previous User</label>
+                    <input type="text" name="previous_user" id="previous_user" placeholder="Previous User">
+                </div>
+                <div class="form-group">
+                    <label for="emp_status">Employee Status*</label>
+                    <select name="employee_status" id="employee_status" required>
+                        <option value="">Select Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Active-Retainer">Active-Retainer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" name="department" id="department" placeholder="Department">
+                </div>
+                <div class="form-group">
+                    <label for="System">System*</label>
+                    <select name="system_name" id="System" required>
+                        <option value="">System</option>
+                        <option value="Desktop">Desktop</option>
+                        <option value="Laptop">Laptop</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="operating_system">Operating System</label>
+                    <input type="text" name="os_name" id="os_name" placeholder="Operating System">
+                </div>
+                <div class="form-group">
+                    <label for="make">Make*</label>
+                    <input type="text" name="make" id="make" placeholder="Make" required>
+                </div>
+                <div class="form-group">
+                    <label for="system_model">System Model*</label>
+                    <input type="text" name="system_model" id="system_model" placeholder="System Model" required>
+                </div>
+                <div class="form-group">
+                    <label for="system_manufacturer">System Manufacturer*</label>
+                    <input type="text" name="system_manufacturer" id="system_manufacturer"
+                        placeholder="System Manufacturer" required>
+                </div>
+                <div class="form-group">
+                    <label for="serial_no">Serial No*</label>
+                    <input type="text" name="serial_no" id="serial_no" placeholder="Serial No" required>
+                </div>
+                <div class="form-group">
+                    <label for="processor_configuration">Processor Configuration</label>
+                    <input type="text" name="processor_config" id="processor_config"
+                        placeholder="Processor Configuration">
+                </div>
+                <div class="form-group">
+                    <label for="ram">RAM</label>
+                    <input type="text" name="ram" id="ram"
+                        placeholder="RAM">
+                </div>
+                <div class="form-group">
+                    <label for="Monitor">Monitor</label>
+                    <input type="text" name="monitor" id="monitor"
+                        placeholder="Monitor">
+                </div>
+
+                <div class="form-group">
+                    <label for="monitor_model_no">Monitor Model No</label>
+                    <input type="text" name="monitor_model_no" id="monitor_model_no" placeholder="Monitor Model No">
+                </div>
+                <div class="form-group">
+                    <label for="monitor_serial_number">Monitor Serial Number</label>
+                    <input type="text" name="monitor_serial_number" id="monitor_serial_number"
+                        placeholder="Monitor Serial Number">
+                </div>
+                <!-- <div class="form-group">
+                    <label for="upgradation_items">Upgradation Items</label>
+                    <input type="text" name="upgradation_items" id="upgradation_items" placeholder="Upgradation Items">
+                </div>
+                <div class="form-group">
+                    <label for="upgradation_date">Upgradation Date</label>
+                    <input type="date" name="upgradation_date" id="upgradation_date">
+                </div>
+                <div class="form-group">
+                    <label for="upgradation_price">Upgradation Price</label>
+                    <input type="number" name="upgradation_price" id="upgradation_price" placeholder="Price">
+                </div> -->
+                <div class="form-group">
+                    <label for="purchase_date">Purchase Date</label>
+                    <input type="date" name="purchase_date" id="purchase_date">
+                </div>
+                <div class="form-group">
+                    <label for="warrenty_upto">Warrenty Up to</label>
+                    <input type="date" name="warrenty_date" id="warrenty_date">
+                </div>
+                <div class="form-group">
+                    <label for="vendor_name">Vendor Name</label>
+                    <input type="text" name="vendor_name" id="vendor_name" placeholder="Vendor Name">
+                </div>
+                <div class="form-group">
+                    <label for="bigmind_installation">BigMind Installation*</label>
+                    <select name="big_mind_install" id="big_mind_installation" required>
+                        <option value="">BigMind Installation</option>
+                        <option value="Yes">Done</option>
+                        <option value="No">Not Applicable</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="remarks">Remarks</label>
+                    <input type="text" name="remarks" id="remarks" placeholder="Remarks">
+                </div>
+                <div class="form-group">
+                    <label for="tag_no_asset_code">TAG NO./Asset Code*</label>
+                    <input type="text" name="asset_code" id="tag_no_asset_code" placeholder="TAG NO./Asset Code">
+                </div>
+                <div class="form-group">
+                    <label for="windows_activation">Windows Activation</label>
+                    <select name="windows_activation" id="windows_activation">
+                        <option value="">Windows Activation</option>
+                        <option value="Done">Done</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Not Applicable">Not Applicable</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="o365_install">O365 Install</label>
+                    <select name="o_install" id="o_install">
+                        <option value="">O365 Install</option>
+                        <option value="Web">Web</option>
+                        <option value="Done">Done</option>
+                        <option value="N/A">N/A</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Host_Rename">Host Rename</label>
+                    <select name="host_rename" id="host_rename">
+                        <option value="">Host Rename</option>
+                        <option value="Done">Done</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Submit</button>
+                <button class="download-btn" id="downloadModal" onclick="downloadCSV()" type="button" style="background-color: rgb(29, 240, 29);">
+                    <i class="fas fa-download" style="margin-right:8px;"></i>Download Details
+                </button>
+            </div>
+            <form action="http://localhost:3000/submit" enctype="multipart/form-data" method="POST" id="uploadform">
+                <input class="file-input" type="file" id="file" name="file" accept=".jpg,.jpeg,.pdf">
+                <button type="submit">Upload</button>
+
+            </form>
+
+            <div id="passwordModal">
+                <div class="modal-box">
+
+                    <h3>Enter Passcode</h3>
+                    <input type="password" id="passcodeInput" placeholder="Enter password" />
+                    <p id="errorMsg" class="error-msg">Incorrect passcode. Please try again.</p>
+                    <button id="close-btn" onclick="closeBox()">X</button>
+                    <button  id="newEntryEditSubmit" onclick="verifyPasscode()">Submit</button>
+                </div>
+            </div>
+            <div id="assetModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="closebtn">X</span>
+                    <div id="assetDetails" style="margin-top: 20px;">
+                        <h1 style="text-align: center;">Assets Details</h1>
+                        <table id="assetResult" border="1" cellpadding="8" cellspacing="0"
+                            style="width:100%; border-collapse:collapse;">
+
+                        </table>
+
+                    </div>
+                </div>
+
+
+        </form>
+
+
+        </div>
+
+
+
+        <script src="/public/index.js"></script>
+        <script src="/public/Home.js"></script>
+        
+    
+</body>
+
+</html>

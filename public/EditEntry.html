@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit AssetEntry</title>
+
+    <link rel="stylesheet" href="/public/index.css">
+    <link rel="stylesheet" href="/public/EditEntry.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body class="editEntryPage">
+    <header>
+        <nav class="navbar">
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <ul class="navbar-links" id="navbar-links">
+                <div class="nav-tab">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item"><a href="newEntry.html" class="nav-link ">New Entry</a></li>
+                    <li class="nav-item"> <a href="EditEntry.html" class="nav-link ">Edit Entry</a></li>
+                </div>
+            </ul>
+            <div class="container">
+                <div class="search-container">
+                    <label for="searchInput">Enter Asset ID:</label>
+                    <input type="text" id="searchAssestCodeEdit" placeholder="Enter Assest Code...">
+                    <button type="button" id="searchbtnEdit" onclick="fetchAsset()"><i
+                            class="fas fa-search"></i>Search</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Edit Details</h2>
+    <div id="customPopUP">
+        <span id="popUpMsg"></span>
+        <br><br>
+        <button onclick="closePopUpMessage()">OK</button>
+    </div>
+    <div id="popOverLay">
+
+    </div>
+    <form id="editForm" class="styled-form" style="display: none;">
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="employee_id">Employee ID</label>
+                <input type="text" name="employee_id" id="employee_id" placeholder="Employee ID" disabled />
+            </div>
+
+            <div class="form-group">
+                <label for="asset_code">Asset Code:</label>
+                <input type="text" name="asset_code" id="asset_code" placeholder="Asset Code" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="current_user_name">Current User Name:</label>
+                <input type="text" name="current_user_name" id="current_user_name" placeholder="current user name"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="site">Site:</label>
+                <select name="site" id="site" disabled>
+                    <option value="ERL-Agarwal House">ERL-Agarwal House</option>
+                    <option value="ERL- City">ERL- City</option>
+                    <option value="ERL-AASTHA">ERL-AASTHA</option>
+                    <option value="ERL-AAMOD">ERL-AAMOD</option>
+                    <option value="ERL-HO">ERL-HO</option>
+                    <option value="ERL-AEROCITY">ERL-AEROCITY</option>
+                    <option value="ERL-BUSINESS BAY">ERL-BUSINESS BAY</option>
+                    <option value="ERL-Bhubaneswar">ERL-Bhubaneswar</option>
+                    <option value="ERL-NATURE">ERL-Nature</option>
+                    <option value="ERL-TEJOMAYA">ERL-Tejomaya</option>
+                    <option value="ERL-QUEENS PARK">ERL-Queens Park</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="previous user">Previous User:</label>
+                <input type="text" name="previous_user" id="previous_user" placeholder="previous user" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="employee_status">employee_status</label>
+                <select name="employee_status" id="employee_status" disabled>
+                    <option value=""></option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="system_name">System Name:</label>
+                <input type="text" class="system_name" id="system_name" disabled>
+            </div>
+            <div class="form-group">
+                <label for="system_model">System Model:</label>
+                <input type="text" name="system_model" id="system_model" placeholder="system model" disabled>
+            </div>
+            <div class="form-group">
+                <label for="os_name">OS Name:</label>
+                <input type="text" name="os_name" id="os_name" placeholder="OS name" disabled>
+            </div>
+            <div class="form-group">
+                <label for="make">Make:</label>
+                <input type="text" name="make" id="make" placeholder="Make" disabled>
+            </div>
+            <div class="form-group">
+                <label for="system_manufacturer">System Manufacturer:</label>
+                <input type="text" name="system_manufacturer" id="system_manufacturer" placeholder="system_manufacturer"
+                    disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="serial_no">Serial No:</label>
+                <input type="text" name="serial_no" id="serial_no" placeholder="serial no" disabled>
+            </div>
+            <div class="form-group">
+                <label for="processor_config">Processor Config</label>
+                <input type="text" name="processor_config" id="processor_config" placeholder="processor_config"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" name="department" id="department" placeholder="Department" disabled>
+            </div>
+            <div class="form-group">
+                <label for="ram">RAM</label>
+                <input type="text" name="ram" id="ram" placeholder="RAM">
+            </div>
+            <div class="form-group">
+                <label for="Monitor">Monitor</label>
+                <input type="text" name="monitor" id="monitor" placeholder="Monitor">
+            </div>
+
+            <div class="form-group">
+                <label for="upgradation_items">Upgradation Items:</label>
+                <input type="text" name="upgradation_items" id="upgradation_items" placeholder="upgradation_items"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="upgradation_date">Upgradation Date:</label>
+                <input type="date" name="upgradation_date" id="upgradation_date" placeholder="upgradation_date"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="upgradation_price">Upgradation Price:</label>
+                <input type="text" name="upgradation_price" id="upgradation_price" placeholder="upgradation_price"
+                    disabled>
+            </div>
+            <div class="form-group">
+                <label for="vendor_name">Vendor Name</label>
+                <input type="text" name="vendor_name" id="vendor_name" placeholder="Vendor Name" disabled>
+            </div>
+            <div class="form-group">
+                <label for="bigmind_installation">BigMind Installation</label>
+                <select name="big_mind_install" id="big_mind_install" disabled>
+                    <option value="">BigMind Installation</option>
+                    <option value="Yes">Done</option>
+                    <option value="No">Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="windows_activation">Windows Activation</label>
+                <select name="windows_activation" id="windows_activation" disabled>
+                    <option value="">Windows Activation</option>
+                    <option value="Done">Done</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Not Applicable">Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="o365_install">O365 Install</label>
+                <select name="o_install" id="o_install" disabled>
+                    <option value="">O365 Install</option>
+                    <option value="Web">Web</option>
+                    <option value="Done">Done</option>
+                    <option value="N/A">N/A</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Host_Rename">Host Rename</label>
+                <select name="host_rename" id="host_rename" disabled>
+                    <option value="">Host Rename</option>
+                    <option value="Done">Done</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="remarks">Remarks:</label>
+                <input type="text" name="remarks" id="remarks" placeholder="remarks" disabled>
+            </div>
+
+
+
+        </div>
+        <div class="edit">
+            <button type="button" id="editBtn" onclick="showPasswordBox()"><i class="fa-solid fa-pencil" style="display: block;
+                justify-content: center;"></i>Edit</button>
+
+            <button type="submit" id="editSubmitBtn" style="display: none;">Submit Details</button>
+        </div>
+        <button type="button" id="deleteBtn" style="margin-top: 7px; background-color: red;"><i class="fa fa-trash" aria-hidden="true" style="display: flex;
+        justify-content: center;" onclick="deleteAsset()">
+            </i>Delete Asset</button>
+
+        <div id="passwordModalEdit">
+            <div class="modal-boxEdit">
+                <h3>Enter passcode</h3>
+                <input type="password" id="EditpasscodeInput" placeholder="Enter Password" autocomplete="username" />
+                <button type="button" id="closeEditBtn" onclick="closeEditBox()">X</button>
+                <p id="editErrorMsg" class="edit-error">Incorrect passcode. Please try again.</p>
+
+                <button id="verifyEdit" type="button" onclick="verifyEditPasscode()">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+    
+
+
+
+    <script src="/public/editEntry.js"></script>
+    <!-- <script src="/public/index.js"></script> -->
+    <script src="/public/Home.js"></script>
+
+</body>
+
+</html>
